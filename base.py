@@ -18,7 +18,6 @@ screen = py.display.set_mode((800, 600))
 screen.fill((255, 255, 255))
 screen.blit(text, (20, 20))
 py.display.flip()
-print("you got to here")
 
 running = True
 while running:
