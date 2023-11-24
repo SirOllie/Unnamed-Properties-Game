@@ -28,8 +28,20 @@ py.display.flip()
 running = True
 while running:
     for event in py.event.get():
-        if event.type == py.USEREVENT: 
-            do_counter()
+        if event.type == py.USEREVENT:
+            if(time_is_paused == False):
+                if day_counter <= 9:
+                    day_counter_text = "0" + str(day_counter) + ":00"
+                else:
+                    day_counter_text = str(day_counter) + ":00"
+                if day_counter <= 22:
+                    day_counter += 1
+                else:
+                    day_counter = 0
+            
+        else:
+            pass
+            #do_counter()
             
         if event.type == py.QUIT:
             running = False
@@ -67,12 +79,13 @@ while running:
 
     clock.tick(144)
     fps_counter = fps_font.render("fps: "+str(round(float(get_fps_info()))), True, white)
-    fps_counter_pos = (fps_counter.get_rect(topleft=(20, 20))).width
     time_text = cash_font.render((day_counter_text), True, white)
+    fps_counter_pos = (fps_counter.get_rect(topleft=(20, 20))).width
+    time_text_pos = (time_text.get_rect(topleft=(20, 20))).width
     screen.blit(bg, (0, 0))
     screen.blit(cash_text, cash_text_position)
     screen.blit(fps_counter, (((screen.get_width())-fps_counter_pos-20), 20))
-    screen.blit(time_text, (1000, 680))
+    screen.blit(time_text, (((screen.get_width())-time_text_pos-20), (screen.get_height())-((time_text.get_rect(topleft=(20, 20))).height)-20))
     if update_ticker < fps_limit:
         update_ticker += 1
     py.display.flip()

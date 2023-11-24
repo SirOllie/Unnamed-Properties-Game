@@ -16,11 +16,4 @@ def get_fps_info():
     return str(clock.get_fps())
 
 def do_counter():
-    if(time_is_paused == False):
-        day_counter_text = "0" + str(day_counter) + ":00"
-        day_counter_text = str(day_counter) + ":00"
-        if day_counter <= 22:
-            if day_counter <= 9:
-                return (day_counter + 1)   
-    else:
-        pass
+    pass
