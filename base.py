@@ -19,6 +19,8 @@ cash_text = cash_font.render("Cash: "+str(cash_val), True, cash_text_colour)
 fps_counter = fps_font.render("fps: "+str(fps), True, white)
 time_text = cash_font.render((day_counter_text), True, white)
 py.time.set_timer(py.USEREVENT, 1000)
+#py.time.set_timer(py.USEREVENT_S2, 500)
+#py.time.set_timer(py.USEREVENT_S3, 333)
 screen.blit(bg, (0, 0))
 screen.blit(cash_text, cash_text_position)
 screen.blit(fps_counter, (1000, 20))
@@ -50,7 +52,10 @@ while running:
             if event.key == py.K_SPACE:
                 time_is_paused = not time_is_paused
 
-            if event.key == py.K_LEFT:
+            if event.key == py.K_UP:
+                pass
+            
+            if event.key == py.K_DOWN:
                 pass
 
             

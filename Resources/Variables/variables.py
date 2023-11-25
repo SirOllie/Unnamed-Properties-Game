@@ -17,6 +17,8 @@ day_counter = 0
 day_counter_text = '00:00'
 time_is_paused = False
 update_ticker = fps_limit
+speed_multiplier = 1
+USEREVENT_TIME = py.USEREVENT + 1
 ########## CASH ##########
 cash_val = 0
 cash_text_position = (20, 20)
